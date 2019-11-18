@@ -24,7 +24,8 @@ products.each do |product|
     provinceMade: prov,
     regionMade: r,
     variety: v,
-    winery: w
+    winery: w,
+    countryMade: c
   )
 end
 
