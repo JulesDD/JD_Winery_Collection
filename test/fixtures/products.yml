@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  designation: 
+  description: 
+  price: 
+  stockDate: 
+  regionMade: 
+  provinceMade: 
+  countryMade: 
+  winery: 
+  variety: one
+
+two:
+  designation: 
+  description: 
+  price: 
+  stockDate: 
+  regionMade: 
+  provinceMade: 
+  countryMade: 
+  winery: 
+  variety: two

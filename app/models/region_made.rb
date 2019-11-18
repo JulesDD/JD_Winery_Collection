@@ -1,0 +1,2 @@
+class RegionMade < ApplicationRecord
+end

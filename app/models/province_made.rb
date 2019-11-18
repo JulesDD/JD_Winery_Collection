@@ -1,0 +1,2 @@
+class ProvinceMade < ApplicationRecord
+end

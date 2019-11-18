@@ -1,0 +1,33 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  orderDate: 
+  orderQuantity: 1
+  subTotal: 9.99
+  isDeliver: false
+  pst: 9.99
+  gst: 9.99
+  hst: 9.99
+  qst: 9.99
+  deliveryFee: 9.99
+  total: 9.99
+  customer: one
+  employee: one
+  product: one
+  shipment: one
+
+two:
+  orderDate: 
+  orderQuantity: 1
+  subTotal: 9.99
+  isDeliver: false
+  pst: 9.99
+  gst: 9.99
+  hst: 9.99
+  qst: 9.99
+  deliveryFee: 9.99
+  total: 9.99
+  customer: two
+  employee: two
+  product: two
+  shipment: two

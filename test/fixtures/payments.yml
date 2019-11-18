@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paymentNo: 
+  paymentType: MyString
+  date: 
+  amount: 1
+
+two:
+  paymentNo: 
+  paymentType: MyString
+  date: 
+  amount: 1
