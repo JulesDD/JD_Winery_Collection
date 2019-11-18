@@ -1,7 +1,7 @@
 class CreateOrders < ActiveRecord::Migration[6.0]
   def change
     create_table :orders do |t|
-      t.dateTime :orderDate
+      t.datetime :orderDate
       t.integer :orderQuantity
       t.decimal :subTotal
       t.boolean :isDeliver
