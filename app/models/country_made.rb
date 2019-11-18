@@ -1,3 +1,3 @@
 class CountryMade < ApplicationRecord
-  validates :countryMade, presence :true
+  validates :countryMade, presence: true
 end
