@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'taxes/index'
+  get 'taxes/view'
+  get 'employee/index'
+  get 'employee/view'
+  get 'customer/index'
+  get 'customer/view'
   get 'product/index'
   get 'product/view'
   get 'winery/index'
