@@ -1,3 +1,12 @@
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
+# require 'csv'
+
 CountryMade.destroy_all
 ProvinceMade.destroy_all
 RegionMade.destroy_all
@@ -8,7 +17,7 @@ Product.destroy_all
 csv_file = Rails.root + 'db/Wine-reviews-dataset-2019.csv'
 products = SmarterCSV.process(csv_file, col_sep: ',')
 
-products.each do |product|
+products[0..30].each do |product|
   c = CountryMade.find_or_create_by(countryMade: product[:countryMade])
   prov = ProvinceMade.find_or_create_by(provinceMade: product[:provinceMade])
   r = RegionMade.find_or_create_by(regionMade: product[:regionMade])
@@ -27,6 +36,7 @@ products.each do |product|
     winery: w,
     countryMade: c
   )
+
 end
 
 puts "Generated #{CountryMade.count} countries."

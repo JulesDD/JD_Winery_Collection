@@ -4,8 +4,6 @@ class Product < ApplicationRecord
   has_many :country_mades
   has_many :wineries
   has_many :varieties
-  belongs_to :variety
-  belongs_to :orders
 
   validates :designation, :description, :price, :stockDate, presence: true
 end
