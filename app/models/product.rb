@@ -5,6 +5,7 @@ class Product < ApplicationRecord
   has_many :wineries
   has_many :varieties
   belongs_to :variety
+  belongs_to :orders
 
   validates :designation, :description, :price, :stockDate, presence: true
 end

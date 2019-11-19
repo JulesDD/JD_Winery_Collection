@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_185000) do
+ActiveRecord::Schema.define(version: 2019_11_18_222333) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -45,6 +45,36 @@ ActiveRecord::Schema.define(version: 2019_11_18_185000) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "customers", force: :cascade do |t|
+    t.string "fullName"
+    t.string "emailAddress"
+    t.integer "contactNumber"
+    t.string "streetAddress"
+    t.string "province"
+    t.string "postalCode"
+    t.string "username"
+    t.string "password"
+    t.integer "taxes_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["taxes_id"], name: "index_customers_on_taxes_id"
+  end
+
+  create_table "employees", force: :cascade do |t|
+    t.string "fullName"
+    t.string "emailAddress"
+    t.integer "contactNumber"
+    t.string "streetAddress"
+    t.string "province"
+    t.string "postalCode"
+    t.string "username"
+    t.string "password"
+    t.integer "taxes_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["taxes_id"], name: "index_employees_on_taxes_id"
+  end
+
   create_table "logins", force: :cascade do |t|
     t.integer "customer_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -57,22 +87,20 @@ ActiveRecord::Schema.define(version: 2019_11_18_185000) do
     t.integer "orderQuantity"
     t.decimal "subTotal"
     t.boolean "isDeliver"
-    t.decimal "pst"
-    t.decimal "gst"
-    t.decimal "hst"
-    t.decimal "qst"
     t.decimal "deliveryFee"
     t.decimal "total"
     t.integer "customer_id", null: false
     t.integer "employee_id", null: false
     t.integer "product_id", null: false
     t.integer "shipment_id", null: false
+    t.integer "taxes_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_orders_on_customer_id"
     t.index ["employee_id"], name: "index_orders_on_employee_id"
     t.index ["product_id"], name: "index_orders_on_product_id"
     t.index ["shipment_id"], name: "index_orders_on_shipment_id"
+    t.index ["taxes_id"], name: "index_orders_on_taxes_id"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -128,6 +156,15 @@ ActiveRecord::Schema.define(version: 2019_11_18_185000) do
     t.index ["employee_id"], name: "index_shipments_on_employee_id"
   end
 
+  create_table "taxes", force: :cascade do |t|
+    t.decimal "pst"
+    t.decimal "gst"
+    t.decimal "qst"
+    t.decimal "hst"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "varieties", force: :cascade do |t|
     t.string "variety_name"
     t.integer "amount_of_variety"
@@ -142,11 +179,14 @@ ActiveRecord::Schema.define(version: 2019_11_18_185000) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "customers", "taxes", column: "taxes_id"
+  add_foreign_key "employees", "taxes", column: "taxes_id"
   add_foreign_key "logins", "customers"
   add_foreign_key "orders", "customers"
   add_foreign_key "orders", "employees"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "shipments"
+  add_foreign_key "orders", "taxes", column: "taxes_id"
   add_foreign_key "products", "varieties"
   add_foreign_key "shipments", "customers"
   add_foreign_key "shipments", "employees"
