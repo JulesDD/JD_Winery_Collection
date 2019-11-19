@@ -1,3 +1,3 @@
 ActiveAdmin.register Winery do
-  permit_params :winery_name, :amount_from_winery
+  permit_params :winery_name
 end

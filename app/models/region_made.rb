@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class RegionMade < ApplicationRecord
-  belongs_to :product
+  has_many  :products
 
   validates :regionMade, presence: true
 end

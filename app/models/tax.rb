@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Tax < ApplicationRecord
-  belongs_to :orders
+  belongs_to :order
 end

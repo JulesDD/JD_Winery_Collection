@@ -1,5 +1,5 @@
 class Variety < ApplicationRecord
-  belongs_to :product
+  has_many :product
 
   validates :variety_name, presence: true
 end
