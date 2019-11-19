@@ -1,5 +1,5 @@
 class CountryMade < ApplicationRecord
-  belongs_to :products
-  
+  belongs_to :product
+
   validates :countryMade, presence: true
 end
