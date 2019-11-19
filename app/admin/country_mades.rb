@@ -5,7 +5,7 @@ ActiveAdmin.register CountryMade do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :countryMade, :amount_from_country
+  permit_params :countryMade, :amount_from_country
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register CountryMade do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end

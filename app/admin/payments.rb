@@ -5,7 +5,7 @@ ActiveAdmin.register Payment do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  # permit_params :paymentNo, :paymentType, :date, :amount
+  permit_params :paymentNo, :paymentType, :date, :amount
   #
   # or
   #
@@ -14,5 +14,5 @@ ActiveAdmin.register Payment do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
 end
