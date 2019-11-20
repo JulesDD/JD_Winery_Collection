@@ -60,3 +60,5 @@ gem 'smarter_csv'
 gem 'activeadmin'
 
 gem 'devise'
+
+gem 'rubocop'

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :pages
   get 'taxes/index'
   get 'taxes/view'
   get 'employee/index'
@@ -30,6 +29,7 @@ Rails.application.routes.draw do
   resources :region_made
   resources :province_made
   resources :country_made
+  resources :pages
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
