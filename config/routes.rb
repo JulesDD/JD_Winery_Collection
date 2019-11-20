@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
   get 'taxes/index'
   get 'taxes/view'
@@ -17,8 +19,20 @@ Rails.application.routes.draw do
   get 'province_made/view'
   get 'contry_made/index'
   get 'contry_made/view'
+
+  resources :tax
+  resources :employee
+  resources :customer
+  resources :product
+  resources :winery
+  resources :variety
+  resources :region_made
+  resources :province_made
+  resources :country_made
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
   root to: 'product#index'
 end

@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
 class Tax < ApplicationRecord
-  belongs_to :order
+  has_many :customers
+  has_many :employees
 end

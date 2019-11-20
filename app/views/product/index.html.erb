@@ -1,2 +1,8 @@
-<h1>Product</h1>
-<p></p>
+<section class="section">
+  <h1 class="title">Welcome</h1>
+</section>
+<div class="columns is multiline">
+  <%= render partial: "product/product", collection: @products %>
+</div>
+
+<%= paginate @products, window: 2 %>

@@ -7,5 +7,7 @@ class Product < ApplicationRecord
   belongs_to :winery
   belongs_to :variety
 
+  has_one_attached :image
+
   validates :designation, :description, :price, :stockDate, presence: true
 end

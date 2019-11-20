@@ -1,3 +1,4 @@
 class Customer < ApplicationRecord
-  has_many :orders
+  belongs_to :order
+  belongs_to :tax
 end
