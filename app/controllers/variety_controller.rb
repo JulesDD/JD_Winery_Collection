@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class VarietyController < ApplicationController
   def index
-    @varieties = Variety.order(:variety_name).page param[:variety_name]
+    @varieties = Variety.order(:variety_name).page params[:variety_name]
   end
 
   def view

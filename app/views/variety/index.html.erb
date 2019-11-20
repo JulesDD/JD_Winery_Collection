@@ -1,2 +1,28 @@
-<h1>Variety#index</h1>
-<p>Find me in app/views/variety/index.html.erb</p>
+<section class="section">
+  <h1 class="title">Variety</h1>
+  <h2 class="subtitle">Here listed are the variety of wines availible in my collection</h2>
+</section>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Variety</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @varieties.each do |variety| %>
+    <tr>
+      <td><%= variety.variety_name %></td>
+      <td><%= variety.product.size %></td>
+      <td><%= %></td>
+    </tr>
+
+  </tbody>
+  <% end %>
+</table>
+
+<%= paginate @varieties, window: 2 %>
+<p><%= link_to "Home", root_path %></p>
+

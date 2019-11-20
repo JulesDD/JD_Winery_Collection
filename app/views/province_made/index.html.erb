@@ -1,2 +1,26 @@
-<h1>ProvinceMade#index</h1>
-<p>Find me in app/views/province_made/index.html.erb</p>
+<section class="section">
+  <h1 class="title">Provinces where these fine products are made</h1>
+</section>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Products made from provinces.</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @province_made.each do |provinces| %>
+    <tr>
+      <td><%= provinces.provinceMade %></td>
+      <td><%= provinces.provinceMade.size %></td>
+      <td><%= %></td>
+    </tr>
+
+  </tbody>
+  <% end %>
+</table>
+
+<%= paginate @province_made, window: 2 %>
+<p><%= link_to "Home", root_path %></p>

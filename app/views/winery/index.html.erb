@@ -1,2 +1,28 @@
-<h1>Winery#index</h1>
-<p>Find me in app/views/winery/index.html.erb</p>
+<section class="section">
+  <h1 class="title">Wineries</h1>
+  <h2 class="subtitle">Here listed are the wineries where these fine products are made.</h2>
+</section>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Products made from provinces.</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @wineries.each do |winery| %>
+    <tr>
+      <td><%= winery.winery_name %></td>
+      <td><%= winery.product.size %></td>
+      <td><%= %></td>
+    </tr>
+
+  </tbody>
+  <% end %>
+</table>
+
+<%= paginate @wineries, window: 2 %>
+<p><%= link_to "Home", root_path %></p>
+
