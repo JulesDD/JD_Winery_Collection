@@ -10,7 +10,8 @@ class ProductController < ApplicationController
   end
 
   def search_results
-    
+    @query = params[:query]
+    @products = Product.where(designation: @query)
   end
 
 end

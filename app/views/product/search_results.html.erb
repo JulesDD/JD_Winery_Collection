@@ -1,3 +1,9 @@
 <section class="section">
-  <p class="title"><strong> Search results go here</strong></p>
+  <p class="title"><strong> Your search for '<%= @query%>' returned <%= pluralize(@products.size, 'result') %> </strong></p>
 </section>
+
+<div class="columns is multiline">
+  <%= render partial: 'product/product',
+  collection: @product,
+  locals: { name_is_link: true } %>
+</div>

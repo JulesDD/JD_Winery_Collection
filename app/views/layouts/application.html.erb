@@ -54,7 +54,15 @@
               </a>
             </div>
           </div>
+          <div>
+            <%= form_with(url: product_search_results_path, method: "get", local: true) do %>
+            <%= label_tag(:query, "Search here:") %>
+            <%= text_field_tag(:query) %>
+            <%= submit_tag("Search") %>
+            <% end %>
+          </div>
         </div>
+
 
         <!-- <div class="navbar-end">
           <div class="navbar-item">
