@@ -11,7 +11,6 @@ class ProductController < ApplicationController
 
   def search_results
     @query = params[:query]
-    @products = Product.where(designation: @query)
+    @products = Product.where('designation LIKE ?', "%#{@query}%")
   end
-
 end
