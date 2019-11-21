@@ -5,7 +5,7 @@ class ProductController < ApplicationController
     @products = Product.order(:designation).page params[:page]
   end
 
-  def view
+  def show
     @products = Product.find(params[:id])
   end
 end
