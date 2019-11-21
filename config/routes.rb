@@ -8,7 +8,8 @@ Rails.application.routes.draw do
   get 'customer/index'
   get 'customer/view'
   get 'product/index'
-  get 'product/view'
+  get 'product/show'
+  get 'product/search_results'
   get 'winery/index'
   get 'winery/view'
   get 'variety/index'
@@ -23,7 +24,11 @@ Rails.application.routes.draw do
   resources :tax
   resources :employee
   resources :customer
-  resources :product
+  resources :product do
+    collection do
+      get 'search_results'
+    end
+  end
   resources :winery
   resources :variety
   resources :region_made
