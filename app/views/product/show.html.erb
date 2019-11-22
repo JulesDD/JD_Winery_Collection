@@ -11,12 +11,15 @@
   <p class="subtitle is-6"><strong>Description:</strong><%= @products.description %></p>
   <p class="subtitle is-6"><strong>Price:</strong><%= number_to_currency @products.price %></p>
   <p class="subtitle is-6"><strong>Availible in Stock:</strong><%= @products.amount %></p>
-  <%= if @cart.include?(@products)%>
+  <% if @cart.include?(@products)%>
     </br>
     <p>Product is in your cart...</p>
-  <%= else %>
+  <% else %>
     </br>
-    <p><%= link_to 'add to cart', add_to_cart_path(@products.id), method: :post %></i></p>
+    <p class="subtitle is-6"><%= link_to 'add to cart ', add_to_cart_path(@products.id), method: :post %><i class="fas fa-plus"></i></p>
+  <% end %>
 </div>
-
-<p><%= link_to "Home", root_path %></p>
+<div>
+  </br>
+  <p class="subtitle is-6"><%= link_to "Home", root_path %></p>
+</div>
