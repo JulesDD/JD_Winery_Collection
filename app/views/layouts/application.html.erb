@@ -56,13 +56,27 @@
           </div>
           <div>
             <%= form_with(url: product_search_results_path, method: "get", local: true) do %>
-            <%= label_tag(:query, "Search here:") %>
+            <%= label_tag(:query, "Search Products:") %>
             <%= text_field_tag(:query) %>
             <%= submit_tag("Search") %>
             <% end %>
           </div>
         </div>
-
+        <div>
+          <details>
+            <summary>Shopping Cart<i class="fas fa-shopping-cart"></i></summary>
+            <% if @cart.empty %>
+              <p>No items in cart</p>
+            <% else %>
+              <ul>
+                <%= @cart.each do |product|%>
+                <li><%= product.designation %><%= product.price %></li>
+                <li><%= link_to 'remove', remove_from_cart_path(product), method: :delete %></li>
+                <%= end %>
+              </ul>
+            <% end %>
+          </details>
+        </div>
 
         <!-- <div class="navbar-end">
           <div class="navbar-item">
@@ -79,6 +93,8 @@
       </div> -->
     </nav>
   <body>
-    <%= yield %>
+    <section>
+      <%= yield %>
+    </section>
   </body>
 </html>

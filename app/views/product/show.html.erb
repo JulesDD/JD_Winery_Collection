@@ -1,6 +1,7 @@
 <section class="section">
   <h1 class="title"><%= @products.designation %></h1>
 </section>
+<!-- <%= debug session[:cart] %> -->
 <div>
   <%= image_tag(@products.image) %>
   <p class="title is-4"><strong>Name:</strong><%= @products.designation %></p>
@@ -8,9 +9,14 @@
   <p class="subtitle is-6"><strong>Province:</strong><%= @products.provinceMade.provinceMade %></p>
   <p class="subtitle is-6"><strong>Country:</strong><%= @products.countryMade.countryMade %></p>
   <p class="subtitle is-6"><strong>Description:</strong><%= @products.description %></p>
-  <p class="subtitle is-6"><strong>Price:</strong><%= @products.price %></p>
+  <p class="subtitle is-6"><strong>Price:</strong><%= number_to_currency @products.price %></p>
   <p class="subtitle is-6"><strong>Availible in Stock:</strong><%= @products.amount %></p>
-  </br>
+  <%= if @cart.include?(@products)%>
+    </br>
+    <p>Product is in your cart...</p>
+  <%= else %>
+    </br>
+    <p><%= link_to 'add to cart', add_to_cart_path(@products.id), method: :post %></i></p>
 </div>
 
 <p><%= link_to "Home", root_path %></p>

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'province_made/view'
   get 'contry_made/index'
   get 'contry_made/view'
+  get 'about', to: 'product#about'
 
   resources :tax
   resources :employee
@@ -35,6 +36,9 @@ Rails.application.routes.draw do
   resources :province_made
   resources :country_made
   resources :pages
+
+  post 'product/add_to_cart/:id', to: 'product#add_to_cart', as: 'add_to_cart'
+  delete 'product/remove_from_cart/:id', to: 'product#remove_from_cart', as: 'remove_from_cart'
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
