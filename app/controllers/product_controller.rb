@@ -33,6 +33,7 @@ class ProductController < ApplicationController
   end
 
   private
+
   def initialize_session
     session[:visit_count] ||= 0
     session[:cart] ||= []
