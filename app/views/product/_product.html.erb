@@ -1,8 +1,8 @@
-<div class="tile is-ancestor">
-  <div class="tile is-one-fifth">
-    <div class="tile is-horizontal is-8">
+<div class="column is-one-fifth">
+  <div class="card customer">
+    <div class="card-content">
       <p class="title is-4"><strong>Name: </strong><%= link_to product.designation, product %></p>
-      <p><%= link_to image_tag("/app/assets/images", size: "20"), product %></p>
+      <p><%= link_to image_tag(product.image), product %></p>
       </br>
     </div>
   </div>
