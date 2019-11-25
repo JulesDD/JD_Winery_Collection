@@ -2,7 +2,7 @@
   <h1 class="title"><%= @products.designation %></h1>
 </section>
 <div>
-  <%= image_tag(@products.image) %>
+  <%= image_tag(@products.image, height: '200', width:'100' ) %>
   <p class="title is-4"><strong>Name:</strong><%= @products.designation %></p>
   <p class="subtitle is-6"><strong>Region:</strong><%= @products.regionMade.regionMade %></p>
   <p class="subtitle is-6"><strong>Province:</strong><%= @products.provinceMade.provinceMade %></p>
