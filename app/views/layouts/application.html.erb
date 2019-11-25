@@ -46,9 +46,6 @@
             <a class="navbar-item" href="/pages/1">
               About
             </a>
-            <a class="navbar-item">
-              Contact
-            </a>
           </div>
         </div>
         <div>
@@ -58,15 +55,13 @@
           <%= submit_tag("Search") %>
           <% end %>
         </div>
-      </div>
-      <div>
         <details class="navbar-item">
           <summary>Shopping Cart<i class="fas fa-shopping-cart"></i></summary>
           <% if @cart.empty? %>
             <p>No items in cart</p>
           <% else %>
             <ul>
-              <%= @cart.each do |product|%>
+              <% @cart.each do |product|%>
                 <li><%= product.designation %> <%= number_to_currency product.price %></li>
                 <li><%= link_to 'remove', remove_from_cart_path(product), method: :delete %></li>
                 <%= button_to 'buy now', checkout_create_path, method: :post, params: {id: product.id}, remote: true %>

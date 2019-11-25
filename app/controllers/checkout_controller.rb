@@ -12,7 +12,7 @@ class CheckoutController < ApplicationController
         name:product.designation,
         amount:product.amount,
         currency: 'cad',
-        quantity: order.amount
+        quantity: 1
       }],
       {
         name:'PST',
@@ -22,17 +22,18 @@ class CheckoutController < ApplicationController
         name:'GST',
         amount: tax.gst * product.amount
       }
-      {
-        name:'HST',
-        amount: tax.hst * product.amount
-      }
-      {
-        name: 'QST',
-        amount: tax.qst * product.amount
-      }
-      success_url:checkout_successful_url, +'?session_id = {CHECKOUT_SESSION_ID}'
+      # {
+      #   name:'HST',
+      #   amount: tax.hst * product.amount
+      # }
+      # {
+      #   name: 'QST',
+      #   amount: tax.qst * product.amount
+      # }
+      success_url: checkout_successful_url, +'?session_id = {CHECKOUT_SESSION_ID}',
       cancel_url: checkout_cancel_url
     )
+
     respond_to do |format|
       format.js
     end
