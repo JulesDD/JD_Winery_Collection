@@ -25,26 +25,26 @@
     <div id="navbarBasicExample" class="navbar-menu">
       <div class="navbar-start">
         <a class="navbar-item" href="/">
-          Home
+          <p class="subtitle">Home</p>
         </a>
         <a class="navbar-item" href="/province_made">
-          Province
+          <p class="subtitle">Province</p>
         </a>
         <a class="navbar-item" href="/variety">
-          Variety
+          <p class="subtitle">Variety</p>
         </a>
         <a class="navbar-item" href="/winery">
-          Winery
+          <p class="subtitle">Winery</p>
         </a>
 
         <div class="navbar-item has-dropdown is-hoverable">
           <a class="navbar-link">
-            More
+           <p class="subtitle">More</p>
           </a>
 
           <div class="navbar-dropdown">
             <a class="navbar-item" href="/pages/1">
-              About
+              <p class="subtitle">About</p>
             </a>
           </div>
         </div>
@@ -56,7 +56,7 @@
           <% end %>
         </div>
         <details class="navbar-item">
-          <summary>Shopping Cart<i class="fas fa-shopping-cart"></i></summary>
+          <summary class="subtitle">Shopping Cart<i class="fas fa-shopping-cart"></i></summary>
           <% if @cart.empty? %>
             <p>No items in cart</p>
           <% else %>
