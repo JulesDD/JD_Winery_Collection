@@ -62,3 +62,5 @@ gem 'activeadmin'
 gem 'devise'
 
 gem 'rubocop'
+
+gem 'stripe'
